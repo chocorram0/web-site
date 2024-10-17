@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>bojack-horseman</title>
+ 
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+body {
+  font-family: 'Comic Neue';
+
+   
+            justify-content: center;
+            align-items: center;
+           
+         margin: 0;
+         padding: 0 ;
+    
+         background: linear-gradient(to bottom , #000000, #455034, #2d442d, #2f4f38, #285934, #357727);
+           
+        }
+        h1 {
+            font-size: 4em;
+            color: #61dafb;
+            transition: color 0.5s ease;
+        }
+
+
+.contenedor{
+    background-image:linear-gradient(to bottom,transparent 60%, #455034 95%), url(bojack\ \(1\).jpg);
+background-repeat: no-repeat;
+background-size: 100%;
+	height: 100vh;
+	margin: none;
+}
+
+
+
+
+
+
+nav {
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    z-index: 1000; 
+}
+
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: #141414;
+    
+    box-shadow: 200 190 15px rgba(0, 0, 0, 0.3);
+    padding: 1px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    padding: 5px 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+}
+
+nav ul li ul {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #141414;
+    padding: 0;
+    border: 1px solid #333;
+    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+    width: 100px;
+    flex-direction: column;
+}
+
+nav ul li ul.visible {
+    max-height: 200px;
+    opacity: 1;
+    padding: 10px;
+}
+
+nav ul li ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li ul li:last-child {
+    margin-bottom: 0;
+}
+
+nav ul li ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.logo {
+    width: 200px;
+    height: 40px;
+}
+
+.caca {
+    width: 70%;
+}
+.caca1{
+    width: 5%;
+}
+
+.a{
+    width: 400px;
+    margin: 90px 60px 10px;
+}
+h6{
+    color: #fff;
+    margin: 1px 1px;
+    padding: 5px 5px;
+}
+
+
+.netflix-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #e50914; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 20px 40px;
+}
+
+.netflix-button:hover {
+  background-color: #c5989a; 
+  transition: 2s;
+}
+
+
+
+.persona{
+
+    
+width: 100%;
+height: 1000px;
+}
+
+* {cursor: url(https://cur.cursors-4u.net/others/oth-4/oth379.cur), auto !important;}
+
+/*         #455034        #455034, #2d442d, #2f4f38     */
+
+.bloque2{
+    
+    display: grid;
+	place-content: center;
+	min-height: 100vh;
+	background-image:linear-gradient(to top,#455034 10%,transparent  20%),linear-gradient(to bottom, #455034  80%,transparent 100%);
+
+height: 950px;
+
+}
+
+
+
+
+.container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1em;
+    width: 900px;
+    height: 600px;
+    transition: all 400ms;
+}
+
+.container:hover .box {
+    filter: grayscale(100%) opacity(24%);
+}
+
+.box {
+    box-shadow: #000 10px 10px 10px;
+    position: relative;
+    background: var(--img) center center;
+    background-size: cover;
+    transition: all 400ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.container .box:hover {
+    filter: grayscale(0%) opacity(100%);
+}
+
+.container:has(.box-1:hover) {
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+}
+
+.container:has(.box-2:hover) {
+    grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+}
+
+.container:has(.box-3:hover) {
+    grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+}
+
+.container:has(.box-4:hover) {
+    grid-template-columns: 1fr 1fr 1fr 3fr 1fr;
+}
+
+.container:has(.box-5:hover) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 3fr;
+}
+
+.box:nth-child(odd) {
+    transform: translateY(-16px);
+}
+
+.box:nth-child(even) {
+    transform: translateY(16px);
+}
+
+.box::after {
+    content: attr(data-text);
+    position: absolute;
+    bottom: 20px;
+    background: #000;
+    color: #fff;
+    padding: 10px 10px 10px 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    transform: translateY(60px);
+    opacity: 0;
+    transition: all 400ms;
+}
+
+.box:hover::after {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 400ms;
+}
+
+.info-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: 150px; /* Ajusta el ancho según sea necesario */
+    word-wrap: break-word; /* Permite que el texto se divida en varias líneas */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.box:hover .info-label {
+    opacity: 1;
+}
+
+
+
+/*fon personajes*/
+
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
+h4{
+    font-family: 'UnifrakturCook', cursive;
+    font-size: 70px;
+    margin: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    .bloque3 {
+        display: flex;
+        justify-content: center;
+       
+        height: 950px;
+ 
+    }
+
+    .resumen-contenedor {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .resumen {
+        max-width: 600px;
+        margin-right: 10px;
+        margin-top: 200px; 
+    }
+
+    iframe {
+        flex-shrink: 0; /* Evita que el video se reduzca si hay poco espacio */
+        margin-top: 400px; 
+        border: #000 solid 10px 10px 10px 10px;
+        box-shadow: #000 10px 10px 10px;
+    }
+
+    h4.col {
+        margin-top: 0;
+    }
+
+    h6 {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+
+
+
+
+
+/***/
+
+.piso{
+ 
+    
+    margin-top: 10vh;
+    height: 100px;
+    display: flex;
+
+
+
+
+}
+
+
+
+
+
+.estilos{
+   
+   width: 70px;
+   height: 70px;
+   margin: 5px 5px;
+   text-decoration: none;
+   border-radius: 10px;
+}
+
+.estilos:hover{
+   width: 100px;
+   height: 100px;
+   transition: 500ms;
+   background-color: rgb(166, 177, 170);
+}
+
+
+.anim{
+   width: 70px;
+   height: 70px;
+
+}
+
+.anim:hover{
+   width: 100px;
+   height: 100px;
+   transition: 500ms;
+
+
+
+}
+
+.register{
+   margin: 20px 60px;
+   background-color: #e50914;
+   color: rgb(0, 0, 0);
+   border: none;
+   padding: 15px 30px;
+   font-size: 16px;
+
+   text-transform: uppercase;
+   border-radius: 4px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+
+}
+
+.register:hover {
+   background-color: #5e0f13;
+}
+
+
+
+.register:focus {
+   outline: none;
+}
+
+
+
+a{
+   text-decoration:none;
+}
+
+/**/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+
+/*:::Boton-Modal:::*/
+.boton-modal{
+    padding: 30px;
+    
+    width: 1700px;
+
+    display: flex;
+    justify-content: flex-end;
+}
+.boton-modal label{
+    padding: 10px 15px;
+    background-color: #ce1111;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.boton-modal label:hover{
+    background-color: #830707;
+}
+/*:::Fin Boton-Modal:::*/
+
+/*:::Ventana Modal:::*/
+#btn-modal{
+    display: none;
+}
+.container-modal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0; left: 0;
+    background-color: rgba(31, 34, 36, 0.5);/*fondo del formul<rio*/
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+#btn-modal:checked ~ .container-modal{
+    display: flex;
+}
+.content-modal{
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+}
+.content-modal h2{
+    margin-bottom: 15px;
+}
+.content-modal p{
+    padding: 15px 0px;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+}
+.content-modal .btn-cerrar{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+.content-modal .btn-cerrar label{
+    padding: 7px 10px;
+    background-color: #7a2d2d;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.content-modal .btn-cerrar label:hover{
+    background-color:#831818;
+}
+.cerrar-modal{
+    width:100%;
+    height: 100vh;
+    position: absolute;
+    top:0; left: 0;
+    z-index: -1;
+}
+@media screen and (max-width:800px) {
+    .content-modal{
+        width: 90%;
+    }
+}
+/*:::Fin Ventana Modal:::*/
+
+
+
+
+
+
+
+
+
+
+
+
+fieldset, img {border:0}
+
+ol, ul, li {list-style:none}
+
+:focus {outline:none}
+
+
+
+input,
+textarea,
+select {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #4c4c4c;
+}
+
+p {
+  font-size: 12px;
+  width: 150px;
+  display: inline-block;
+  margin-left: 18px;
+}
+h1 {
+  font-size: 32px;
+  font-weight: 300;
+  color: #4c4c4c;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+
+.testbox {
+  margin: 20px auto;
+  width: 343px; 
+  height: 500px; 
+ 
+  border-radius: 8px/7px; 
+  background-color: #1a1515; 
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  box-shadow: 5px 5px 5px rgba(0,0,0,.31); 
+  border: solid 1px #cbc9c9;
+}
+
+.radio, .cierre, .termi{
+
+
+    color: white;
+}
+
+.cierre{
+    background-color: red;
+border-radius: 10px;
+font-size: 30px;
+}
+
+input[type=radio] {
+  visibility: hidden;
+}
+
+form{
+  margin: 0 30px;
+}
+
+label.radio {
+	cursor: pointer;
+  text-indent: 35px;
+  overflow: visible;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+label.radio:before {
+  background: #af3a3a;
+  content:'';
+  position: absolute;
+  top:2px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+
+label.radio:after {
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 0.5em;
+	height: 0.25em;
+	
+	top: 7.5px;
+	left: 4.5px;
+	border: 3px solid #ffffff;
+	border-top: none;
+	border-right: none;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+input[type=radio]:checked + label:after {
+	opacity: 1;
+}
+
+hr{
+  color: #a9a9a9;
+  opacity: 0.3;
+}
+
+input[type=text],input[type=password]{
+  width: 200px; 
+  height: 39px; 
+  -webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
+  -moz-border-radius: 0px 4px 4px 0px/0px 0px 4px 4px; 
+  border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
+
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  border: solid 1px #cbc9c9;
+  margin-left: -5px;
+  margin-top: 13px; 
+  padding-left: 10px;
+}
+
+input[type=password]{
+  margin-bottom: 25px;
+}
+
+#icon {
+  display: inline-block;
+  width: 30px;
+  background-color: #af3a3a;
+  padding: 8px 0px 8px 15px;
+  margin-left: 15px;
+  -webkit-border-radius: 4px 0px 0px 4px; 
+  -moz-border-radius: 4px 0px 0px 4px; 
+  border-radius: 4px 0px 0px 4px;
+  color: white;
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  border: solid 0px #cbc9c9;
+}
+
+.gender {
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.accounttype{
+  margin-left: 8px;
+  margin-top: 20px;
+}
+
+a.button {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  padding: 6px 25px 0px 20px;
+  margin: 10px 8px 20px 0px;
+  display: inline-block;
+
+  text-decoration: none;
+  width: 50px; height: 27px; 
+  -webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 5px; 
+  background-color: #af3a3a; 
+  -webkit-box-shadow: 0 3px rgba(175, 58, 58, 0.75); 
+  -moz-box-shadow: 0 3px rgba(175, 58, 58, 0.75); 
+  box-shadow: 0 3px rgba(175, 58, 58, 0.75);
+  transition: all 0.1s linear 0s; 
+  top: 0px;
+  position: relative;
+
+}
+
+a.button:hover {
+  top: 3px;
+  background-color:#8b2e2e;
+  -webkit-box-shadow: none; 
+  -moz-box-shadow: none; 
+  box-shadow: none;
+  
+}
+
+
+
+
+
+/**/
+
+
+
+</style>
+
+
+</head>
+<body>
+
+    <nav class="header">
+        <ul>
+            <div class="lin">
+                <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="">
+            </div>
+            <div class="caca">.</div>
+            <li><a href="#seccion1">inicio</a></li>
+            <li><a href="#seccion2">personajes</a></li>
+            
+            
+            <li><a href="#seccion3">resumen</a>    </li>
+             
+        
+            <li><a href="#">otros</a>
+                <ul>
+                    <li><a href="breaking.html">breaking bad</a></li>
+                    <li><a href="stranger.html">stranger things</a></li>
+                    <li><a href="scott.html">scott pilgrim</a></li>
+                    <li><a href="mana.html">Nana</a></li>
+                </ul>
+            </li>
+            <div class="caca1"><h4></h4></div>
+        </ul>
+
+     
+    </nav>
+
+
+   <section id="seccion1">
+<div class="contenedor">
+
+
+
+
+
+<div class="frase">
+   <img class="a" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/BoJack_Horseman_Logo.svg/1280px-BoJack_Horseman_Logo.svg.png" alt="">
+<h6>Conoce al caballo más querido de los 90… veinte años después. </h6>
+<h6>Vive en Los Ángeles donde humanos y animales antropomórficos coexisten, </h6>
+<h6>BoJack Horseman es la historia de un hombre (bueno, un caballo-hombre) </h6>
+<h6>que llegó muy rápido a la cima y ahora tiene que averiguar qué hacer.</h6>
+</div> 
+
+
+<button class="netflix-button" onclick="window.location.href='https://www.netflix.com/title/70300800'">Ver BoJack Horseman </button>
+
+
+ <div class="piso">
+
+        <a href="" class="estilos">
+            <img src="https://cdn-icons-png.flaticon.com/512/63/63621.png"  class="anim" alt="Facebook">
+        </a>
+        <a href="" class="estilos">
+            <img src="https://cdn-icons-png.flaticon.com/512/60/60580.png"  class="anim" alt="Twitter">
+        </a>
+        <a href="" class="estilos">
+            <img src="https://cdn-icons-png.flaticon.com/256/123/123739.png"  class="anim" alt="Instagram">
+        </a>
+        <a href="" class="estilos">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384044.png"  class="anim" alt="youtube">
+        </a>
+
+        
+
+    <div class="boton-modal">
+        <label for="btn-modal">
+           registrate
+        </label>
+    </div>
+
+
+<!--Ventana Modal-->
+<input type="checkbox" id="btn-modal">
+<div class="container-modal">
+    <div class="content-modal">
+        
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+        
+        <div class="testbox">
+          <h1>registrate</h1>
+        
+          <form action="/">
+              <hr>
+            <div class="accounttype">
+              <input type="radio" value="None" id="radioOne" name="account" checked/>
+              <label for="radioOne" class="radio" chec>Personal</label>
+              <input type="radio" value="None" id="radioTwo" name="account" />
+              <label for="radioTwo" class="radio">Company</label>
+            </div>
+          <hr>
+          <label id="icon" for="name"><i class="icon-envelope "></i></label>
+          <input type="text" name="name" id="Email" placeholder="Email" required/>
+          <label id="icon" for="name"><i class="icon-user"></i></label>
+          <input type="text" name="name" id="name" placeholder="Name" required/>
+          <label id="icon" for="name"><i class="icon-shield"></i></label>
+          <input type="password" name="name" id="name" placeholder="Password" required/>
+        
+           <p class="termi">Al hacer clic en Registrarse, usted acepta nuestra <a href="#">terms and condition</a>.</p>
+           <a href="#" class="button" onclick="registrarUsuario()">registrate</a>
+          </form>
+        </div>
+
+        
+            <label class="cierre" for="btn-modal">.x.</label>
+        </div>
+    </div>
+    <label for="btn-modal" class="cerrar-modal"></label>
+</div>
+<!--Fin de Ventana Modal-->
+
+
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+
+<section id="seccion2" class="section">
+
+    <div class="bloque2">
+
+
+
+
+        <center>
+            <h4>Personajes</h4>
+        
+        
+        <div class="container">
+            <a href="#" class="box box-1" style="--img: url(https://i.pinimg.com/564x/d8/97/df/d897df9c2a253304c2b9ffd35b7cccf7.jpg);" data-text="princess carolyn">
+                <span class="info-label">Es una gata rosa antropomórfica y la representante (y a veces manager) de BoJack. Es una mujer trabajadora, ambiciosa y determinada que a menudo debe lidiar con la irresponsabilidad de BoJack mientras maneja su propia vida caótica.</span>
+            </a>
+            <a href="#" class="box box-2" style="--img: url(https://i.pinimg.com/236x/23/7e/a5/237ea5933b21e2fe1f6af3ee921a0612.jpg);" data-text="todd chavez">
+                <span class="info-label">Es un joven humano que inicialmente vive con BoJack de manera accidental, después de colarse en su casa para una fiesta y nunca irse. Todd es ingenuo, optimista y algo excéntrico, lo que lo lleva a embarcarse en una serie de aventuras absurdas</span>
+            </a>
+            <a href="#" class="box box-3" style="--img: url(https://i.pinimg.com/236x/22/00/b6/2200b6b82b6a812969baa31d247f3482.jpg);" data-text="BoJack Horseman">
+                <span class="info-label">BoJack Horseman,un caballo antropomórfico que fue una estrella de la televisión en los años 90 gracias a su papel en la comedia "Horsin' Around". Sin embargo, años después, BoJack es un actor olvidado que lucha con la depresión, el abuso de sustancias y su incapacidad para encontrar satisfacción en su vida.</span>
+            </a>
+            <a href="#" class="box box-4" style="--img: url(https://i.pinimg.com/236x/f0/48/1e/f0481ef7f12c0718daab5750e2d87dae.jpg);" data-text="Mr peanutbutter">
+                <span class="info-label">Mr. Peanutbutter, Es un perro labrador amarillo antropomórfico y una estrella de televisión que fue el protagonista de una serie similar a "Horsin' Around" llamada "Mr. Peanutbutter's House". A diferencia de BoJack, Mr. Peanutbutter es alegre, positivo y generalmente bien querido por todos.</span>
+            </a>
+            <a href="#" class="box box-5" style="--img: url(https://i.pinimg.com/236x/3a/ba/af/3abaaf91aa6b4411ccca953d807b408a.jpg);" data-text="diane nguyen">
+                <span class="info-label">Diane Nguyen, Es una escritora humana y feminista que es contratada para escribir la autobiografía de BoJack. Diane es inteligente, sarcástica y tiene un fuerte sentido de la justicia, lo que a veces la pone en conflicto con los demás personajes</span>
+            </a>
+        </div>
+        </center>
+
+</section>
+
+
+<section id="seccion3" class="section33">
+    <div class="bloque3">
+        <div class="resumen-contenedor">
+            <div class="resumen">
+<center>
+                <h4 class="col">Resumen</h4>
+
+</center>
+                <h6>En un mundo donde humanos y animales antropomorfos conviven, el personaje principal de la serie es el caballo BoJack Horseman (Will Arnett), protagonista de la telecomedia Horsin' Around en la década de 1990. Después de años de decadencia y una tormentosa vida personal, se propone volver al candelero a través de una autobiografía para la que contará con ayuda de una escritora fantasma, Diane Nguyen (Alison Brie). BoJack también tendrá que lidiar con las exigencias de su exnovia y agente, la gata Princess Carolyn; su compañero de piso Todd Chávez y su amigo-enemigo Mr. Peanutbutter, un perro labrador que es novio de Diane. La mayor parte de los episodios se desarrollan en Hollywood, California. Además de estos personajes ficticios, la serie cuenta con cameos de actores y actrices que se interpretan a sí mismos, como Margo Martindale, Naomi Watts o Wallace Shawn entre otros. BoJack Horseman es una de las primeras series de animación en Estados Unidos con un hilo narrativo serializado, donde los sentimientos de los protagonistas evolucionan conforme avanza la trama. Will Arnett, actor de voz de BoJack, la ha definido de la siguiente forma: «La paradoja es que los animales protagonizan una comedia cruda sobre la condición humana y sobre una persona que no sabe avanzar (...) Parodiamos lo absurdo de este mundo interesado en las bajezas de los famosos. Es lo más dramático que he hecho. Raphael Bob-Waksberg y yo salimos de la grabación hechos polvo».</h6>
+            </div>
+            <iframe width="600" height="370" src="https://www.youtube.com/embed/8HzgJZALJ7A?si=bY7AyIrnr3SunOdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<script defer src="script (1).js"></script>
+
+
+</body>
+</html>

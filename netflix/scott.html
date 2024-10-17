@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+
+
+body{
+
+    background-color: #141414;
+}
+
+
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        background-color: #141414;
+
+        box-shadow: 200 190 15px rgba(0, 0, 0, 0.3);
+        padding: 1px;
+      }
+
+      nav ul li {
+        position: relative;
+      }
+
+      nav ul li a {
+        padding: 5px 10px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 20px;
+        display: block;
+      }
+
+      nav ul li ul {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #141414;
+        padding: 0;
+        border: 1px solid #333;
+        transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+        width: 100px;
+        flex-direction: column;
+      }
+
+      nav ul li ul.visible {
+        max-height: 200px;
+        opacity: 1;
+        padding: 10px;
+      }
+
+      nav ul li ul li {
+        margin-bottom: 10px;
+      }
+
+      nav ul li ul li:last-child {
+        margin-bottom: 0;
+      }
+
+      nav ul li ul li a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+      }
+
+      .logo {
+        width: 200px;
+        height: 40px;
+      }
+
+      .caca {
+        width: 70%;
+      }
+      .caca1 {
+        width: 5%;
+      }
+
+      .a {
+        width: 400px;
+        margin: 90px 60px 10px;
+      }
+
+      /*-fon nav*/
+
+      .seccion1 {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(
+            to top,
+            rgb(0, 0, 0) 0%,
+            rgba(255, 255, 255, 0) 30%
+          ),
+          linear-gradient(
+            to bottom,
+            rgb(0, 0, 0) 0%,
+            rgba(255, 255, 255, 0) 30%
+          ),
+          url("https://i.pinimg.com/736x/cc/42/6c/cc426c397d8399f347bbfb8ea38fc869.jpg")
+            no-repeat center center/cover;
+
+        margin: 0 auto;
+        width: 200vh;
+        height: 100vh;
+      }
+
+      .texto {
+        color: #fff;
+        font-size: 20px;
+
+        margin: 40px;
+        word-wrap: break-word;
+        text-align: left;
+
+        width: 500px;
+        height: 500px;
+      }
+
+      .title-info-metadata-wrapper {
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        direction: ltr;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,
+          sans-serif;
+        font-size: 16px;
+        color: #fff;
+        line-height: 1.4;
+        margin-top: 16px;
+      }
+
+      .seccion2 {
+        background-color: #141414;
+justify-items: center;
+      align-items: center;
+        width: 200vh;
+        height: 100vh;
+        display: flex;
+  
+      
+      }
+
+      .videos {
+
+
+        width: 160vh;
+        height: 70vh;
+
+      }
+
+      .tex{
+
+        
+        margin-left: 200px;
+      }
+
+      .item {
+        
+  
+       
+        direction: ltr;
+        font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,
+          sans-serif;
+        margin: 0.75em 0 0.25em;
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 27px;
+        display: inline-block;
+        border-left: 1px solid #a3a3a3;
+        margin-left: 9px;
+        padding-left: 15px;
+        color: #a3a3a3;
+        white-space: nowrap;
+      }
+
+      .additional-video {
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        direction: ltr;
+        list-style-type: none;
+        color: inherit;
+        font: inherit;
+        text-transform: none;
+
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        background: none;
+        border: none;
+        margin: 2px;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        text-align: left;
+      }
+
+
+
+/**/
+
+
+
+a{
+  text-decoration: none;
+}
+.Carousel{
+   
+  width: 100%;
+  margin: 10px -100px;
+
+}
+.Carousel h2{
+  font-size: 26px;
+  line-height: 38px;
+  padding-bottom: 24px;
+  opacity: .9;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  text-align: center;
+}
+
+/* images */
+
+a{
+  text-decoration: none;
+}
+.Carousel{
+  width: 100%;
+  margin: 0px 60px;
+}
+.Carousel h2{
+  font-size: 26px;
+  line-height: 38px;
+  padding-bottom: 24px;
+  opacity: .9;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  text-align: center;
+}
+
+/* images */
+
+.slick-list{
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: 304px;
+  padding: 10px 0px;
+  margin: 0px auto;
+  max-width: 90vw;
+  overflow: hidden;
+}
+.slick-track{
+  margin: -40px;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  transition: .5s ease-in-out;
+}
+.slick{
+  position: relative;
+  width: 500px;
+  padding: 0 18px;
+  float: left;
+  box-sizing: border-box;
+  display: flex;
+  height: 100%;
+}
+.slick h4{
+  position: absolute;
+  z-index: 1;
+  font-size: 22px;
+  line-height: 23px;
+  color: #fff;
+  padding: 15px;
+}
+.slick h4 small{
+  font-size: 15px;
+  display: block;
+}
+.slick a img{
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
+  margin: 5px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.5);
+  transition: .3s ease-in-out;
+}
+.slick a img:hover{
+  opacity: .50;
+}
+
+/* buttons */
+
+.slick-arrow{
+  border-radius: 30px;
+  background-color: #fff;
+  position: absolute;
+  z-index: 4;
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  box-shadow: 10px 2px 5px 0 rgba(0,0,0,.15);
+  border: 0;
+  cursor: pointer;
+}
+.slick-arrow:focus{
+  outline: 0;
+}
+.slick-arrow svg{
+  width: 12px;
+  height: 100%;
+  color: rgba(0,0,0,.7);
+}
+.slick-prev{
+  left: 0px;
+}
+.slick-next{
+  right: 0px;
+}
+
+
+
+
+
+
+
+
+.caca3{
+
+
+    width: 100px;
+    height: 130px;
+}
+
+
+
+
+
+
+
+
+
+#seccion3{
+
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+
+    width: 199vh;
+        height: 100vh;
+
+        justify-items: center;
+      align-items: center;
+      text-align: center;
+      
+    
+}
+
+.container {
+box-shadow: #000000 5px 5px 10px;
+    display: flex;
+    align-items: center;
+ width: 800px;
+    margin: 100px 200px;
+}
+
+.cover-image {
+    border-radius: 8px;
+    max-width: 300px;
+    margin-right: 20px;
+}
+
+.content {
+    max-width: 800px;
+}
+
+h1 {
+    font-size: 30px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+p {
+    font-size: 20px;
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    margin-right: 20px;}
+
+.learn-more {
+    font-size: 15px;
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <nav class="header">
+      <ul>
+        <div class="lin">
+          <img
+            class="logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
+            alt=""
+          />
+        </div>
+        <div class="caca">.</div>
+        <li><a href="#seccion1">inicio</a></li>
+        <li><a href="#seccion2">videos</a></li>
+
+        <li><a href="#seccion3">resumen</a></li>
+
+        <li>
+          <a href="#">otros</a>
+          <ul>
+            <li><a href="breaking.html">breaking bad</a></li>
+            <li><a href="stranger.html">stranger things</a></li>
+            <li><a href="paguinap (1).html">bojack horseman</a></li>
+            <li><a href="mana.html">Nana</a></li>
+          </ul>
+        </li>
+        <div class="caca1"><h4></h4></div>
+      </ul>
+    </nav>
+
+    <section id="seccion1" class="seccion1">
+      <div class="texto">
+        <h1>Scott Pilgrim</h1>
+        <div
+        >
+          <span class="title-info-metadata-item item-year" data-uia="item-year"
+            >2023</span
+          ><span role="presentation" class="info-spacer"> | </span
+          ><span class="maturity-rating"
+              ><span class="screen-reader-text">Clasificación por edad:</span
+              ><span class="maturity-number">13+ </span></span
+            ></span
+          ><span role="presentation" class="info-spacer"> | </span
+          ><span
+            class="title-info-metadata-item item-runtime"
+            data-uia="item-runtime"
+            ><span class="duration"
+              ><span class="test_dur_str">1 temporada</span></span
+            ></span
+          ><span role="presentation" class="info-spacer"> | </span
+          ><a
+            class="title-info-metadata-item item-genre"
+            href="https://www.netflix.com/co/browse/genre/81746407"
+            data-uia="item-genre"
+            >Animes</a
+          >
+        </div>
+
+        <p>
+          Scott Pilgrim conoce a la chica de sus sueños, Ramona Flowers. Pero,
+          para ganar su amor, deberá vérselas con sus siete malvadas exparejas.
+        </p>
+      </div>
+    </section>
+
+    <section id="seccion2" class="seccion2">
+        <div class="videos">
+
+            <div class="tex">
+          <h1 class="item">Videos</h1>
+          <h2 class="item">Scott Pilgrim</h2>
+      </div>
+
+<div class="caca3">.</div>
+          <div class="Carousel">
+
+            <div class="slick-list" id="slick-list">
+                <button class="slick-arrow slick-prev" id="button-prev" data-button="button-prev" onclick="app.processingButton(event)">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg>
+                </button>
+                <div class="slick-track" id="track">
+                    <div class="slick">
+                        <div>
+                            <a href="https://www.youtube.com/watch?v=8nxTyYvB3RQ">
+                                
+                                <picture>
+                                    <img src="https://occ-0-1472-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABS4eJ-Brl-NJGbmww-T7wpms7dTOoySQNqDxAMFjUNvSPjHYo1VNnV4KKU9fRyjOTKNVdbcYP-2hAquWHgu_MjUaVkSHd4CqfRumQz04e9QwSvaB_UceyQ6DfA.jpg?r=bc5" alt="Image">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="https://www.youtube.com/watch?v=9EZG8YqBvIY">
+                               
+                                <picture>
+                                    <img src="https://occ-0-1472-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABTQtzB9u1Y7LXnwUfyYPC8Vhf-boIId_HUk0hTqmZJ9nl0sw6W6H8ggZQaGA_BfMsKPUpco6M2QCcW2wxFZQ8Gi-BQQfTfUp2qoHgmrk3ZlymuePZln0wj8xdw.jpg?r=b70" alt="Image">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="https://www.youtube.com/watch?v=jFb638Sy7aI">
+                                
+                                <picture>
+                                    <img src="https://occ-0-1472-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABTmRKU9B8369fQRFYxExhezgVABiDXogEUuZ_jHk6X9wI003fZ0I6Ie6VCxftu3d8j_s5rPR985qLDh1DCpmkpmFCCZPXf7Ozg1P.jpg?r=2e3" alt="Image">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="https://www.youtube.com/watch?v=LIgHiS4h7Jc">
+                                
+                                <picture>
+                                    <img src="https://occ-0-1472-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbDFFCknXrcwgUKQyWWBTLg6W6bpVhO4Jq8cFXVkD2D9Gk-LI5OOhPNVkO-xxxTrZfjhkZgIvLJehl2jBYTsvfx4QMb2HKR9wYsMiQ0YFGnjvD3fexKwtY95Tg.jpg?r=117" alt="Image">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="https://www.youtube.com/watch?v=QkEmnkT3Qi8">
+                               
+                                <picture>
+                                    <img src="https://occ-0-1472-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABe5jvFN19X7PZeBve42jg1VaCuB_hEB4vuPGWiNkM8bphCjZBex-e28lvbXn4tJi39NbZKHpiXTHoRpL-oIV1l5Y-4Qh8HvToSG9dWKF2yJYg3dC71yQ1jGWAA.jpg?r=9c0" alt="Image">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slick">
+                        <div>
+                            <a href="https://www.youtube.com/watch?v=61ZFOuEMVN8" >
+                              
+                                <picture>
+                                    <img src="https://occ-0-1472-116.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABWouMxg1wlxxk9oJkXy4MhXhK9Xr5HtPRvEgj970c9GNgjKPoxknGk_cB5hn_HvllQOhSAs7k0Wu7C7q-pJoFFAz8K_geV36Z6Pujp7m_O6JCbpbgnvW-s2IMA.jpg?r=716" alt="Image">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                    
+               
+                    
+                    
+                
+                 
+                   
+                   
+        
+                </div>
+                <button class="slick-arrow slick-next" id="button-next" data-button="button-next" onclick="app.processingButton(event)">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
+                </button>
+            </div>
+            
+                
+
+
+          
+          
+        </div>
+      </section>
+
+
+<section id="seccion3">
+    
+
+      <div class="container">
+        <img src="https://i.pinimg.com/474x/cb/c8/93/cbc89390f5642d3c7c6fc6896fdbac0b.jpg" alt="Scott Pilgrim" class="cover-image">
+        <div class="content">
+            <h1>Scott Pilgrim vs. the World</h1>
+            <p>
+                <strong>Scott Pilgrim vs. the World</strong> es una serie de novelas gráficas creada por Bryan Lee O'Malley. La historia sigue a Scott Pilgrim, un joven de 23 años que vive en Toronto, Canadá, y toca en una banda llamada Sex Bob-Omb. Su vida da un giro dramático cuando se enamora de Ramona Flowers, una chica con una serie de ex novios malvados que Scott debe derrotar para ganar su corazón. La serie es conocida por su estilo visual distintivo, humor irreverente y referencias a la cultura pop y los videojuegos.
+            </p>
+            <a href="https://es.wikipedia.org/wiki/Scott_Pilgrim" class="learn-more" target="_blank">Leer más sobre Scott Pilgrim</a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+      
+    <script defer src="scott.js"></script>
+  </body>
+</html>

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Estilos para las secciones con fondo de imagen */
+        .parent:first-of-type {
+            background: #ffffff url("https://c4.wallpaperflare.com/wallpaper/160/401/232/walter-white-breaking-bad-wallpaper-preview.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+       
+
+        .parent {
+            width: 100%;
+            height: 150vh;
+            color: #fff;
+            text-shadow: 0 0 5px #000;
+            font-family: tahoma;
+            text-align: center;
+            line-height: 180%;
+            display: flex;
+            align-items: center;
+        }
+
+        .letras {
+            margin: 50px;
+            word-wrap: break-word;
+            width: 500px;
+        }
+
+        #principal {
+            display: grid;
+            align-items: center;
+        }
+
+        /* Estilos adicionales para la sección de Breaking Bad */
+        .breaking-bad-section {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150vh;
+            background-color: #111;
+            overflow: hidden;
+        }
+
+        .breaking-bad-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://example.com/breaking-bad-background.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(10px) brightness(0.5);
+            z-index: 1;
+        }
+
+        .breaking-bad-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 5px solid #a6a637;
+            padding: 20px;
+            z-index: 2;
+            max-width: 1000px;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .breaking-bad-poster {
+            width: 500px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .breaking-bad-content {
+            max-width: 500px;
+        }
+
+        .breaking-bad-title {
+            font-size: 4rem;
+            color: #a6a637;
+            font-family: 'Courier New', Courier, monospace;
+            margin-bottom: 20px;
+        }
+
+        .breaking-bad-summary {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        .watch-now-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #a6a637;
+            color: #000;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .watch-now-btn:hover {
+            background-color: #c7c746;
+        }
+
+        .breaking-bad-summary::first-letter {
+            font-size: 2rem;
+            color: #a6a637;
+            font-weight: bold;
+        }
+
+
+/* menu*/
+
+nav {
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    z-index: 1000; 
+}
+
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: #141414;
+    
+    box-shadow: 200 190 15px rgba(0, 0, 0, 0.3);
+    padding: 1px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    padding: 5px 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+}
+
+nav ul li ul {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #141414;
+    padding: 0;
+    border: 1px solid #333;
+    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+    width: 100px;
+    flex-direction: column;
+}
+
+nav ul li ul.visible {
+    max-height: 200px;
+    opacity: 1;
+    padding: 10px;
+}
+
+nav ul li ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li ul li:last-child {
+    margin-bottom: 0;
+}
+
+nav ul li ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul li:hover ul {
+    max-height: 200px;
+    opacity: 1;
+    padding: 10px;
+}
+
+.logo {
+    width: 200px;
+    height: 40px;
+}
+
+.caca {
+    width: 70%;
+}
+.caca1{
+    width: 5%;
+}
+
+.a{
+    width: 400px;
+    margin: 90px 60px 10px;
+}
+h6{
+    color: #fff;
+    margin: 1px 1px;
+    padding: 5px 5px;
+}
+
+
+
+/*contenedor4 */
+
+#contenedor4{
+margin: 0 auto;
+position: relative;
+    width: 207vh;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center; /* Alinea horizontalmente */
+    align-items: center;    /* Alinea verticalmente */
+
+}
+
+/*tv */
+
+
+.tv-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4a3a29;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.tv-frame {
+    background-color: #2b1e14;
+    border: 5px solid #3e2f23;
+    border-radius: 10px;
+    width: 400px;
+    height: 300px;
+    position: relative;
+    padding: 10px;
+}
+
+.tv-screen {
+    background-color: #000;
+    border-radius: 8px;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.screen-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px;
+}
+
+.tv-controls {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.control {
+    background-color: #444;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.knob {
+    background-color: #888;
+}
+
+.speaker {
+    width: 60px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #2b1e14;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.speaker::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 4px;
+    background-color: #444;
+    border-radius: 2px;
+}
+
+
+h5{
+    position: absolute; 
+            top: 10px; 
+            left: auto;
+            color:#e0e0e0;
+            font-size: 50px;
+            text-shadow: #a63737 5px 5px 7px;
+            text-shadow: #6b1212 4px 4px 5px;
+}
+
+
+h8{
+position: absolute;
+}
+
+
+
+
+
+
+
+#tres{
+    background-color: #000;
+}
+
+
+
+
+
+
+
+
+/*sliider*/
+
+.slider-title {
+  text-align: center;
+  font-size: 3rem;
+  color: #66bb6a;
+  margin-bottom: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+
+
+
+.slider {
+background-color: #000;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 161vh;
+ 
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-container {
+  
+   
+  display: flex;
+  left: auto;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.slide img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.info {
+  margin-top: 20px;
+}
+
+.info h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #66bb6a;
+}
+
+.info p {
+  font-size: 1rem;
+  color: #bbb;
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+button {
+  background-color: #66bb6a;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #4caf50;
+}
+
+button:focus {
+  outline: none;
+}
+
+.prev {
+  position: absolute;
+  left: 10px;
+}
+
+.next {
+  position: absolute;
+  right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <nav class="header">
+        <ul>
+            <div class="lin">
+                <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="">
+            </div>
+            <div class="caca">.</div>
+            <li><a href="paguinap (1).html">inicio</a></li>
+            <li><a href="#d">personajes</a></li>
+            
+            
+            <li><a href="#dos">resumen</a>    </li>
+             
+        
+            <li><a href="#">otros</a>
+                <ul>
+                    <li><a href="mana.html">Nana</a></li>
+                    <li><a href="stranger.html">stranger things</a></li>
+                    <li><a href="scott.html">scott pilgrim</a></li>
+                    <li><a href="paguinap (1).html">bojack horseman</a></li>
+                </ul>
+            </li>
+            <div class="caca1"><h4></h4></div>
+        </ul>
+
+     
+    </nav>
+
+
+    <!-- Primera sección con Breaking Bad -->
+    <div class="parent" id="principal">
+        <div class="parallex">
+            <div class="letras">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Breaking_Bad_logo.svg/2560px-Breaking_Bad_logo.svg.png" alt="logo" style="width: 300px;">
+                <p class="intro">Breaking Bad (BrBa) es una serie exitosa, creación del genio Vince Gilligan, que trata sobre un frustrado profesor de química, interpretado de manera majestuosa por Bryan Cranston, el cual atraviesa por un montón de problemas, uno de ellos, y el que desencadena toda la historia, es que le diagnostican cáncer de pulmón.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Segunda sección de Breaking Bad añadida -->
+
+
+    <section id="dos">
+    <div class="breaking-bad-section">
+        <div class="breaking-bad-background"></div>
+        <div class="breaking-bad-container">
+            <img src="https://i.pinimg.com/236x/b0/7d/77/b07d77b9dbb07f325ddeaa93fcf6a6f5.jpg" alt="Breaking Bad Poster" class="breaking-bad-poster">
+            <div class="breaking-bad-content">
+                <h1 class="breaking-bad-title">Breaking Bad</h1>
+                <p class="breaking-bad-summary">
+                    "Breaking Bad" es una serie de televisión estadounidense que sigue la vida de Walter White, un profesor de química convertido en un narcotraficante de metanfetaminas, y su socio, Jesse Pinkman. La serie explora temas de moralidad, familia y la transformación de una persona común en un criminal despiadado.
+                </p>
+                <a href="#" class="watch-now-btn">Ver Ahora</a>
+            </div>
+        </div>
+    </div>
+
+
+    </section>
+
+    <section id="tres">
+
+    <!-- Sección original 2 -->
+    <div class="parent" id="seccion2">
+      
+   <div id="contenedor4">
+
+
+
+<h5>tv/trailer</h5>
+
+
+    <div class="tv-container">
+        <div class="tv-frame">
+            <div class="tv-screen">
+                <div class="screen-content">
+                    
+
+                    <iframe width="600" height="350" src="https://www.youtube.com/embed/Bi3mMWw_cJ4?autoplay=1&si=n_z8sXlhQaXz_Di2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+     
+                </div>
+            </div>
+            <div class="tv-controls">
+                <div class="control knob"></div>
+                <div class="control knob"></div>
+                <div class="control speaker"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="controls">
+        
+    </div>
+
+
+
+
+
+
+
+
+</div>
+
+    </div>
+   <h1 class="slider-title">Personajes Principales</h1>
+ 
+</section>
+
+
+<section class="slider">
+    <div class="slider-container">
+      <div class="slide" data-index="0">
+        <img src="https://i.pinimg.com/236x/27/59/31/2759310448bc91b31ef1fb4c4b71fba9.jpg" alt="Walter White">
+        <div class="info">
+          <h2>Walter White</h2>
+          <p>Un profesor de química de secundaria se convirtió en fabricante de metanfetamina después de un diagnóstico de cáncer terminal.</p>
+        </div>
+      </div>
+      <div class="slide" data-index="1">
+        <img src="https://i.pinimg.com/control/236x/5f/7e/0b/5f7e0b47bb3c6c2c9ad16f25971610b0.jpg" alt="Jesse Pinkman">
+        <div class="info">
+          <h2>Jesse Pinkman</h2>
+          <p>Ex alumno de Walter White y socio en el negocio de la metanfetamina, lucha contra la adicción y los dilemas morales.</p>
+        </div>
+      </div>
+      <div class="slide" data-index="2">
+        <img src="https://i.pinimg.com/236x/b6/36/6c/b6366c8d43049cec3dbd051c65ddce51.jpg" alt="Saul Goodman">
+        <div class="info">
+          <h2>Saul Goodman</h2>
+          <p>Un abogado penalista que ayuda a Walter y Jesse con asuntos legales e ilegales, a menudo con un toque de humor.</p>
+        </div>
+      </div>
+      <div class="slide" data-index="3">
+        <img src="https://i.pinimg.com/control/236x/71/c3/64/71c3646ae8158efa14ff5315a9995125.jpg" alt="Gus Fring">
+        <div class="info">
+          <h2>Gus Fring</h2>
+          <p>Un exitoso hombre de negocios y capo de la droga que dirige una cadena de comida rápida como fachada para su imperio ilegal.</p>
+        </div>
+      </div>
+      <div class="slide" data-index="4">
+        <img src="https://i.pinimg.com/236x/be/56/d0/be56d06993c0d08001c8ae0cb6b03cbe.jpg" alt="Hank Schrader">
+        <div class="info">
+          <h2>Hank Schrader</h2>
+          <p>El cuñado de Walter y un dedicado agente de la DEA que se obsesiona con atrapar al esquivo "Heisenberg".</p>
+        </div>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="prev">Prev</button>
+      <button class="next">Next</button>
+    </div>
+  </section>
+  
+
+
+
+
+
+
+
+
+
+    <script defer src="breaking.js"></script>
+</body>
+</html>
+
